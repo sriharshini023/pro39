@@ -41,6 +41,7 @@ function setup() {
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
   trex.scale = 0.5;
+ // trex.shapeColor("green")
   
   ground = createSprite(200,180,400,20);
   ground.addImage("ground",groundImage);
@@ -70,8 +71,9 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-  background(255);
+  background(0);
   text("Score: "+ score, 500,50);
+ // score.shapecolor("green")
   
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
@@ -191,5 +193,6 @@ function reset(){
   console.log(localStorage["HighestScore"]);
   
   score = 0;
+  score.shapecolor("green")
   
 }
